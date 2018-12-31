@@ -6,6 +6,7 @@ When fetching a CultureInfo instance, the library populates it from the stored J
 Additional Features
 * Simple caching method, for improving the serialization process.
 * This library is compiled using .NET standard.
+* For reduced memory footprint, simplly delete the irrelevant cultures from the cultures folder, and recompile.
 
 How to use this library?
 * This library should be as each to implement as possible.
