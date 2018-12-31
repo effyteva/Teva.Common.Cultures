@@ -14,14 +14,17 @@ namespace Teva.Common.Cultures
         {
             var SerializedCulture = GetSerializedCulture(CultureName);
             var ToReturn = (System.Globalization.CultureInfo)new System.Globalization.CultureInfo(CultureName).Clone();
-            ToReturn.NumberFormat = SerializedCulture.NumberFormatInfo;
-            ToReturn.DateTimeFormat = SerializedCulture.DateTimeFormatInfo;
+            if (SerializedCulture != null)
+            {
+                ToReturn.NumberFormat = SerializedCulture.NumberFormatInfo;
+                ToReturn.DateTimeFormat = SerializedCulture.DateTimeFormatInfo;
+            }
             return ToReturn;
         }
         private static SerializedCulture GetSerializedCulture(string CultureName)
         {
             var Serialized = new Newtonsoft.Json.JsonSerializer();
-            using (var Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("Teva.Common.Cultures.cultures." + CultureName + ".json"))
+            using (var Stream = System.Reflection.Assembly.GetExecutingAssembly().GetManifestResourceStream("Teva.Common.Cultures.cultures." + CultureName.ToLower() + ".json"))
             {
                 if (Stream == null)
                     return null;

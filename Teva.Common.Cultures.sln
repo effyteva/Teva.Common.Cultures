@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teva.Cultures", "Teva.Common.Cultures.csproj", "{24362F59-7C2C-4E5C-881C-CB465298B57E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Teva.Common.Cultures", "Teva.Common.Cultures.csproj", "{24362F59-7C2C-4E5C-881C-CB465298B57E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
