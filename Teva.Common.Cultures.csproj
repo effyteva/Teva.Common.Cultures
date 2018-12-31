@@ -10,8 +10,8 @@
   <PropertyGroup>
     <OutputType>Library</OutputType>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyName>Teva.Cultures</AssemblyName>
-    <RootNamespace>Teva.Cultures</RootNamespace>
+    <AssemblyName>Teva.Common.Cultures</AssemblyName>
+    <RootNamespace>Teva.Common.Cultures</RootNamespace>
     <ApplicationIcon />
     <StartupObject />
   </PropertyGroup>
