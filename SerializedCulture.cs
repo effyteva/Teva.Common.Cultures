@@ -6,7 +6,7 @@ namespace Teva.Common.Cultures
 {
     internal class SerializedCulture
     {
-        public System.Globalization.NumberFormatInfo NumberFormatInfo;
-        public System.Globalization.DateTimeFormatInfo DateTimeFormatInfo;
+        public SerializedNumberFormatInfo NumberFormatInfo { get; set; }
+        public SerializedDateTimeFormatInfo DateTimeFormatInfo { get; set; }
     }
 }

@@ -18,12 +18,14 @@ namespace Teva.Common.Cultures
         {
             var Details = new SerializedCulture
             {
-                NumberFormatInfo = Culture.NumberFormat,
-                DateTimeFormatInfo = Culture.DateTimeFormat,
+                NumberFormatInfo = new SerializedNumberFormatInfo(),
+                DateTimeFormatInfo = new SerializedDateTimeFormatInfo()
             };
+            Details.NumberFormatInfo.PopulateFromCultureInfo(Culture);
+            Details.DateTimeFormatInfo.PopulateFromCultureInfo(Culture);
             var JSON = Newtonsoft.Json.JsonConvert.SerializeObject(Details, Newtonsoft.Json.Formatting.None);
             System.IO.Directory.CreateDirectory(System.IO.Path.Combine(System.AppContext.BaseDirectory, "cultures"));
-            System.IO.File.WriteAllText(System.IO.Path.Combine(System.AppContext.BaseDirectory, "cultures", Culture.Name + ".json"), JSON, System.Text.Encoding.UTF32);
+            System.IO.File.WriteAllText(System.IO.Path.Combine(System.AppContext.BaseDirectory, "cultures", Culture.Name.ToLower() + ".json"), JSON, System.Text.Encoding.UTF32);
         }
     }
 }

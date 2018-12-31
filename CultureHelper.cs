@@ -13,13 +13,13 @@ namespace Teva.Common.Cultures
         private static System.Globalization.CultureInfo GetCultureUncached(string CultureName)
         {
             var SerializedCulture = GetSerializedCulture(CultureName);
-            var ToReturn = (System.Globalization.CultureInfo)new System.Globalization.CultureInfo(CultureName).Clone();
+            var Culture = (System.Globalization.CultureInfo)new System.Globalization.CultureInfo(CultureName).Clone();
             if (SerializedCulture != null)
             {
-                ToReturn.NumberFormat = SerializedCulture.NumberFormatInfo;
-                ToReturn.DateTimeFormat = SerializedCulture.DateTimeFormatInfo;
+                SerializedCulture.NumberFormatInfo.PopulateIntoCultureInfo(Culture);
+                SerializedCulture.DateTimeFormatInfo.PopulateIntoCultureInfo(Culture);
             }
-            return ToReturn;
+            return Culture;
         }
         private static SerializedCulture GetSerializedCulture(string CultureName)
         {
